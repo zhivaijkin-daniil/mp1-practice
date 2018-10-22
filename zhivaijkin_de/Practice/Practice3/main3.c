@@ -41,7 +41,7 @@ void main()
 				printf("Загаданное число больше!\n");
 			}
 		}
-		printf("Победа! \n Всего попыток: %d", a);
+		printf("Победа! \n Всего попыток: %d\n", a);
 		return;
 	}
 	if (f == 2)
@@ -56,28 +56,28 @@ void main()
 		y = 1001;
 		z = 0;
 		a = 0;
+		g = '.';
 		do
 		{
 			e = rand() * (y-x) / RAND_MAX + x;
 			printf("\n Думаю, это: %d \n", e);
-			printf("Введите знак >, <, = \n");
-			scanf("%c", &g);
+			printf("Введите знак >, <, =\n");
+			scanf("%*c%c", &g);
 			a++;
-			g = getchar();
 			switch (g)
 			{
 			case '>':
-					x = e + 1;
-					break;
+				x = e + 1;
+				break;
 			case '<':
-					y = e;
-				    break;
+				y = e;
+				break;
 			case '=':
-					z = 1;
-				    break;
+				z = 1;
+				break;
 			default:
-					printf("Неизвестный знак! Введите еще раз. \n");
-				    break;
+				printf("Неизвестный знак! Введите еще раз. \n");
+				break;
 			}
 		}
 		while (z == 0);
