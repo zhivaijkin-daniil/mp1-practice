@@ -6,7 +6,7 @@
 void main()
 {
 	int a, b, c, d, f, e, x, y, z;
-	char g;
+	char g = '.';
 	srand((unsigned int)time(0));
 	a = 0;
 	setlocale(LC_CTYPE, "rus");
@@ -56,7 +56,6 @@ void main()
 		y = 1001;
 		z = 0;
 		a = 0;
-		g = '.';
 		do
 		{
 			e = rand() * (y-x) / RAND_MAX + x;
