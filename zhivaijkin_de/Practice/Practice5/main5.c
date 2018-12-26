@@ -178,7 +178,27 @@ void counting_sort(int *a, ULONGLONG *size, int n) //Подсчет
     int *b = (int*)malloc(HELP * sizeof(int));
     int i, j, idx = 0;
     int h = 0;
-
+    for (i = 0; i < n; i++)
+    {
+        b[i] = 0;
+    }
+    for (i = 0; i < n; i++)
+    {
+        b[size[a[i]]]++;
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (b[i] > 0)
+        {
+            h = 0;
+            for (j = 0; j < b[i]; j++)
+            {
+                while (size[h] != i)
+                    h++;
+                a[idx++] = h++;
+            }
+        }
+    }
     free(b);
 }
 
