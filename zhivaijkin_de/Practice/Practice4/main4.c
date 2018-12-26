@@ -24,10 +24,10 @@ int cod(int str[])
 }
 void info(char tov[][15], int a[], int p[], float skd[], int b)
 {
-    int i;
+	
+	int i;
     printf("\nИнформация о товаре: \n");
-    for (i = 0; i < 15; i++)
-        printf("%c", tov[b][i]);
+    printf("%c", tov[b][i]);
     printf("\nКод: %d\n", a[b]);
     printf("Цена: %d\n", p[b]);
     printf("Скидка: %0.0f\n", skd[b]);
@@ -48,27 +48,27 @@ void itog(char tov[][15], int p[], int kol[], float skd[], float price)
     printf("\nИтог:\n");
     for (i = 0; i < N; i++)
     {
-        if (kol[i] != 0)
+		if (kol[i] != 0)
         {
-            printf("%c\n", tov[i][j]);
-            printf("Стоимость ед. товара: %d руб.\n", p[i]);
-            printf("Количество товара: %d\n", kol[i]);
-            printf("Скидка: %0.0f \n", skd[i]);
-            printf("Итоговая Цена: %f", p[i] - (skd[i] / 100) * p[i] * kol[i]);
+			printf("%c\n", tov[i][j]);
+			printf("Стоимость ед. товара: %d руб.\n", p[i]);
+			printf("Количество товара: %d\n", kol[i]);
+			printf("Скидка: %0.0f \n", skd[i]);
+			printf("Итоговая Цена: %f", p[i] - (skd[i] / 100) * p[i] * kol[i]);
         }
     }
     printf("\nК оплате: %f \n", price);
 }
 void main()
 {
-    int c[N] = { 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009 };
-    int p[N] = { 1000, 450, 890, 2300, 3000, 800, 2100, 20, 300, 120};
+    int c[N] = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009};
+    int p[N] = {1000, 450, 890, 2300, 3000, 800, 2100, 20, 300, 120};
     int var;
-    int a;
+    int a = 0;
     float price = 0;
-    char tov[N][15] = { "Фильтр  ", "Свеча    ", "Масло    ", "Кар-тор ", "Лебедка", "Стартер", "Турбина", "Колпак  ", "Клапан  ", "Оплетка" };
+    char tov[N][15] = { "Фильтр", "Свеча", "Маслo", "Кар-тор ", "Лебедка", "Стартер", "Турбина", "Колпак", "Клапан", "Оплетка" };
     int str[100] = { 0 };
-    float skd[] = { 10, 10, 1, 5, 30, 10, 10, 10, 20, 10};
+    float skd[] = {10, 10, 1, 5, 30, 10, 10, 10, 20, 10};
     setlocale(LC_ALL, "Rus");
     menu();
     while(1)
@@ -79,7 +79,7 @@ void main()
         switch (var)
         {
         case 1:
-            a = cod(c);
+			a = cod(c);
             str[a] = str[a] + 1;
             info(tov, c, p, skd, a);
             price += summa(p, skd, a);
