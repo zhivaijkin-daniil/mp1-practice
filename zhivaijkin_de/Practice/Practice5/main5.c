@@ -50,7 +50,7 @@ int ListDirectoryContents(const wchar_t *sDir, ULONGLONG **sizes, wchar_t ***nam
     return i;
 }
 
-void Menu(int *method)// 
+void Menu(int *method) 
 {
     printf("1 - сортировка выбором\n");
     printf("2 - сортировка вставками\n");
